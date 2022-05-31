@@ -6,18 +6,22 @@ import {GenreRoutingModule} from "./genre-routing.module";
 import {GenresComponent} from "./components/genres/genres.component";
 import {GenreComponent} from "./components/genre/genre.component";
 import {GenreService} from "./services";
+import { MoviesByGenreComponent } from './components/movies-by-genre/movies-by-genre.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
   declarations: [
     GenresComponent,
-    GenreComponent
+    GenreComponent,
+    MoviesByGenreComponent
   ],
 
   imports: [
     CommonModule,
     GenreRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
 
   providers: [

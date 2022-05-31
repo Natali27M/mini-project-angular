@@ -18,4 +18,8 @@ export class GenreService {
     return this.httpClient.get<any>(urls.genre)
   }
 
+  getMoviesByGenre(id: number, page:number): Observable<any> {
+    return this.httpClient.get<any>(urls.movie + `&with_genres=${id}`+ `&&page=${page}`)
+  }
+
 }
