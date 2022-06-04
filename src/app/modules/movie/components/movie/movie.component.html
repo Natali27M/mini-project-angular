@@ -1,4 +1,7 @@
-<p>{{movie.id}}) {{movie.original_title}}</p>
-<img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.original_title}}">
-<button (click) =" navigateMe(movie)">Details</button>
+<img class="image" src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.original_title}}">
+
+<button (click) =" navigateMe(movie)" class="button">
+  <p>{{movie.original_title}}</p>
+  <p class="release_date">{{movie.release_date}}</p>
+</button>
 

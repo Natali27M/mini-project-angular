@@ -1,5 +1,26 @@
-<h1>{{movieDetails.original_title}}</h1>
-<p>{{movieDetails.overview}}</p>
-<a href="https://www.youtube.com/watch?v={{this.movieVideoKey}}">Video</a>
-<div>{{this.movieVideoKey}}</div>
-<!--<button (click)="showVideo()">Video</button>-->
+<div>
+  <div class="boxShadow" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original/' + movieDetails?.backdrop_path + ')' , 'background-repeat': 'no-repeat', 'height':'703px', 'background-size': '100% 703px' }">
+
+    <div class="movieDescription">
+
+      <h1>{{movieDetails.original_title}}</h1>
+
+      <div class="genreName">
+        <p *ngFor="let genre of genres">{{genre.name}}</p>
+      </div>
+
+      <p>{{movieDetails.overview}}</p>
+      <a href="https://www.youtube.com/embed/{{movieVideoKey}}">"https://www.youtube.com/embed/{{movieVideoKey}}"</a>
+
+    </div>
+
+  </div>
+
+  <div class="casts">
+    <div *ngFor="let cast of casts">{{cast.name}}
+      <img src="https://image.tmdb.org/t/p/w200{{cast.profile_path}}" alt="cast.name">
+    </div>
+  </div>
+
+</div>
+

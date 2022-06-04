@@ -4,6 +4,7 @@ export interface IMovie {
   original_title: string;
   poster_path: string;
   popularity: number;
+  release_date: string;
   // adult: false
   // backdrop_path: "/lQxZLeWNdZINBzyzdPr5NbRHL8m.jpg"
   // genre_ids: (3) [28, 12, 14]

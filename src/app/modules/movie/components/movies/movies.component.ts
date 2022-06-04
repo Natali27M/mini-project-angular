@@ -36,6 +36,7 @@ export class MoviesComponent implements OnInit {
 
   pageChangeEvent(event: number){
     this.p = event;
+    console.log(this.p,'page')
     this.getAllMovies();
   }
 

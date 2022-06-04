@@ -1,14 +1,12 @@
 <div class="movies">
 
   <div class="movies">
-
-    <app-movie class="movie" *ngFor="let movie of movies | paginate: {
+    <app-tv-show *ngFor="let tvShow of tvShows | paginate: {
            itemsPerPage: 6,
            currentPage: p,
            totalItems: total
-        }" [movie]="movie">
-    </app-movie>
-
+        }" [tvShow] ="tvShow">
+    </app-tv-show>
   </div>
 
   <div>
@@ -16,6 +14,3 @@
   </div>
 
 </div>
-
-
-

@@ -1,13 +1,25 @@
-<div *ngFor="let movie of moviesByGenre | paginate: { itemsPerPage: 6, currentPage: p, totalItems: total }">
-  <h1>
-    {{movie.original_title}}
-  </h1>
-  <img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.original_title}}">
+<div class="movies">
+
+  <div class="movie" *ngFor="let movie of moviesByGenre | paginate: {
+   itemsPerPage: 6,
+   currentPage: p,
+    totalItems: total }">
+
+    <img class="image" src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.original_title}}">
+
+    <button (click) =" navigateMe(movie)" class="button">
+      <p>{{movie.original_title}}</p>
+      <p class="release_date">{{movie.release_date}}</p>
+    </button>
+
+  </div>
+
+  <div>
+    <pagination-controls (pageChange)="pageChangeEvent2($event)"></pagination-controls>
+  </div>
+
 </div>
 
-<div>
-  <pagination-controls (pageChange)="pageChangeEvent2($event)"></pagination-controls>
-</div>
 
 
 

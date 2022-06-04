@@ -4,8 +4,6 @@ import {GenreService} from "../../services";
 import {IGenre} from "../../interfaces";
 import {MovieService} from "../../../movie/sevices";
 import {IMovie} from "../../../movie/interfaces";
-import {Observable} from "rxjs";
-import {urls} from "../../../../constans";
 
 @Component({
   selector: "app-genres",

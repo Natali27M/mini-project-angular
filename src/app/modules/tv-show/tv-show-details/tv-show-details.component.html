@@ -1,0 +1,25 @@
+<div>
+
+  <div class="boxShadow" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w500/' + tvShowDetails?.backdrop_path + ')' , 'background-repeat': 'no-repeat', 'height':'703px', 'background-size': '100% 703px' }">
+
+    <div class="movieDescription">
+
+      <h1>{{tvShowDetails.name}}</h1>
+
+      <p>{{tvShowDetails.overview}}</p>
+
+      <a href="https://www.youtube.com/embed/{{tvShowVideoKey}}">"https://www.youtube.com/embed/{{tvShowVideoKey}}"</a>
+
+    </div>
+
+  </div>
+
+  <div class="casts">
+
+    <div *ngFor="let cast of casts">{{cast.name}}
+      <img src="https://image.tmdb.org/t/p/w200{{cast.profile_path}}" alt="cast.name">
+    </div>
+
+  </div>
+
+</div>

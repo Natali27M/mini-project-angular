@@ -1,8 +1,11 @@
 import {Component, OnInit} from "@angular/core";
 import {IMovie} from "src/app/modules/movie/interfaces";
 import {ActivatedRoute, Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 import {GenreService} from "../../services";
+import {IGenre} from "../../interfaces";
+import {urls} from "../../../../constans";
 
 @Component({
   selector: "app-movies-by-genre",
@@ -12,12 +15,20 @@ import {GenreService} from "../../services";
 
 export class MoviesByGenreComponent implements OnInit {
 
+  genres: IGenre[];
+  movies: IMovie[];
+  page: number;
   moviesByGenre: IMovie[];
   id: number;
   p: number = 2;
   total: number = 0;
+  movieVideoKey: string;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private genreService: GenreService) {
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private genreService: GenreService,
+    private httpClient: HttpClient) {
 
   }
 
@@ -33,6 +44,15 @@ export class MoviesByGenreComponent implements OnInit {
         this.total = 3000;
       });
     })
+  }
+
+  navigateMe(movie: IMovie) {
+    this.router.navigate([movie.id],
+      { relativeTo: this.activatedRoute, state: { data: movie, key: this.movieVideoKey}}
+    ).then();
+
+    this.httpClient.get<any>(urls.video + `/${movie.id}` + `/videos?api_key=0e17bf058d06dbd99f156ed017f543b4`)
+      .subscribe(value => this.movieVideoKey = value.results[0].key);
   }
 
   pageChangeEvent2(event: number): void{

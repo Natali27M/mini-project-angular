@@ -3,8 +3,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 import {IGenre} from "../../interfaces";
 import {GenreService} from "../../services";
-import {MovieService} from "src/app/modules/movie/sevices";
-import {IMovie} from "src/app/modules/movie/interfaces";
 
 @Component({
   selector: "app-genre",

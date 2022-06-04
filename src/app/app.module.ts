@@ -6,7 +6,7 @@ import {AppComponent} from "./app.component";
 import {MainLayoutComponent} from "./layout/main-layout/main-layout.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {HeaderComponent} from "./components/header/header.component";
-import { PaginationService } from "ngx-pagination";
+import {PaginationService} from "ngx-pagination";
 
 @NgModule({
   declarations: [
