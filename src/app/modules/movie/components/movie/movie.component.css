@@ -12,6 +12,10 @@
   height: 300px;
 }
 
+h4, p {
+  margin: 0;
+}
+
 .release_date {
   color: red;
 }

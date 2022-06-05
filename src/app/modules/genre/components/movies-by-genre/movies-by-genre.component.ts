@@ -27,7 +27,6 @@ export class MoviesByGenreComponent implements OnInit {
   ratings: IRating[] = [
     {
       value : 4,
-      // value : number = this.vote_average,
       max: 10
     }
   ];

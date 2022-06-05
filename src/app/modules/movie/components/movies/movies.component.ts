@@ -30,7 +30,6 @@ export class MoviesComponent implements OnInit {
     this.movieService.getMovies(this.p).subscribe(value => {
       this.movies = value.results;
       this.total = 3000;
-      // this.total = value.total_pages;
     });
   }
 

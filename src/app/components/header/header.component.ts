@@ -16,4 +16,14 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  // onCheckboxChange(event: any) {
+  //   if (event.target.checked) {
+  //     // this.theme = true;
+  //     localStorage.setItem("checked", "true");
+  //   } else {
+  //     // this.theme = false;
+  //     localStorage.setItem("checked", "false");
+  //   }
+  // }
+
 }

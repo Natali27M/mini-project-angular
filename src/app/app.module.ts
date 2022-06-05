@@ -7,6 +7,8 @@ import {MainLayoutComponent} from "./layout/main-layout/main-layout.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {HeaderComponent} from "./components/header/header.component";
 import {PaginationService} from "ngx-pagination";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {PaginationService} from "ngx-pagination";
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSlideToggleModule,
+    MatIconModule
   ],
 
   providers: [

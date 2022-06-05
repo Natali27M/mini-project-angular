@@ -1,23 +1,27 @@
 <img class="image" src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.original_title}}">
 
-<main>
+  <main>
 
-  <ng-container *ngFor="let rating of ratings; index as i">
-    <div class="rating">
+    <ng-container *ngFor="let rating of ratings; index as i">
+      <div class="rating">
             <span>
                 Rating {{vote_average}} of {{rating.max}}
             </span>
-<!--      <div class="stars">-->
-<!--        <ngx-material-rating [color]="rating.color" [(ngModel)]="vote_average" [max]="rating.max">-->
-<!--        </ngx-material-rating>-->
-<!--      </div>-->
-    </div>
-  </ng-container>
+        <!--      <div class="stars">-->
+        <!--        <ngx-material-rating [color]="rating.color" [(ngModel)]="vote_average" [max]="rating.max">-->
+        <!--        </ngx-material-rating>-->
+        <!--      </div>-->
+      </div>
+    </ng-container>
 
-</main>
+  </main>
 
 <button (click) =" navigateMe(movie)" class="button">
-  <p>{{movie.original_title}}</p>
-  <p class="release_date">{{movie.release_date}}</p>
+    <h4>{{movie.original_title}}</h4>
+    <p class="release_date">{{movie.release_date}}</p>
 </button>
+
+
+
+
 

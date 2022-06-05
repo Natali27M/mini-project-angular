@@ -8,4 +8,7 @@
   flex-direction: column;
   padding: 10px 0;
 }
+.dark {
+  background-color: black;
+}
 

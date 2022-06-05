@@ -23,7 +23,6 @@ export class MovieComponent implements OnInit {
   ratings: IRating[] = [
     {
       value : 4,
-      // value : number = this.vote_average,
       max: 10
     }
   ];
@@ -33,14 +32,12 @@ export class MovieComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient) {
-
   }
 
   ngOnInit(): void {
     this.httpClient.get<any>(urls.video + `/${this.movie.id}` + `/videos?api_key=0e17bf058d06dbd99f156ed017f543b4`)
       .subscribe(value=> this.movieVideoKey = value.results[0].key)
     this.vote_average = this.movie.vote_average;
-    console.log(this.vote_average);
   }
 
   navigateMe(movie: IMovie) {
