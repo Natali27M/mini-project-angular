@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {IMovie} from "src/app/modules/movie/interfaces";
+import {IMovie, IRating} from "src/app/modules/movie/interfaces";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 
@@ -23,6 +23,14 @@ export class MoviesByGenreComponent implements OnInit {
   p: number = 2;
   total: number = 0;
   movieVideoKey: string;
+  vote_average: number;
+  ratings: IRating[] = [
+    {
+      value : 4,
+      // value : number = this.vote_average,
+      max: 10
+    }
+  ];
 
   constructor(
     private router: Router,

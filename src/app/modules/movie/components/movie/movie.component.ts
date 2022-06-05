@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 
-import {IMovie} from "../../interfaces";
+import {IMovie, IRating} from "../../interfaces";
 import {IGenre} from "../../../genre/interfaces";
 import {GenreService} from "../../../genre/services";
 import {urls} from "../../../../constans";
@@ -19,6 +19,14 @@ export class MovieComponent implements OnInit {
   movie: IMovie;
   genres: IGenre[];
   movieVideoKey: string;
+  vote_average: number;
+  ratings: IRating[] = [
+    {
+      value : 4,
+      // value : number = this.vote_average,
+      max: 10
+    }
+  ];
 
   constructor(
     private genreService: GenreService,
@@ -31,6 +39,8 @@ export class MovieComponent implements OnInit {
   ngOnInit(): void {
     this.httpClient.get<any>(urls.video + `/${this.movie.id}` + `/videos?api_key=0e17bf058d06dbd99f156ed017f543b4`)
       .subscribe(value=> this.movieVideoKey = value.results[0].key)
+    this.vote_average = this.movie.vote_average;
+    console.log(this.vote_average);
   }
 
   navigateMe(movie: IMovie) {

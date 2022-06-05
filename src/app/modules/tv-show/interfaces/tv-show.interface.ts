@@ -4,6 +4,7 @@ export interface ITvShow {
   name: string;
   overview: string;
   first_air_date: string;
+  vote_average: number;
   // backdrop_path: "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg"
   // first_air_date: "2016-07-15"
   // genre_ids: (3) [10765, 18, 9648]

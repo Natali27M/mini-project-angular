@@ -7,6 +7,18 @@
 
     <img class="image" src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="{{movie.original_title}}">
 
+    <main>
+
+      <ng-container *ngFor="let rating of ratings; index as i">
+        <div class="rating">
+            <span>
+                Rating {{vote_average}} of {{rating.max}}
+            </span>
+        </div>
+      </ng-container>
+
+    </main>
+
     <button (click) =" navigateMe(movie)" class="button">
       <p>{{movie.original_title}}</p>
       <p class="release_date">{{movie.release_date}}</p>

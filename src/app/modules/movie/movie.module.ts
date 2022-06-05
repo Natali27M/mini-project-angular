@@ -8,6 +8,8 @@ import {MovieService} from "./sevices";
 import {MoviesComponent} from "./components/movies/movies.component";
 import {MovieComponent} from "./components/movie/movie.component";
 import {MovieDetailsComponent} from "./components/movie-details/movie-details.component";
+import {NgxMaterialRatingModule} from "ngx-material-rating";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {MovieDetailsComponent} from "./components/movie-details/movie-details.co
     CommonModule,
     MovieRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxMaterialRatingModule,
+    FormsModule
   ],
 
   providers: [

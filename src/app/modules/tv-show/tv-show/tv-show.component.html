@@ -2,6 +2,18 @@
 
   <img class="image" src="https://image.tmdb.org/t/p/w300{{tvShow.backdrop_path}}"  alt="{{tvShow.name}}">
 
+  <main>
+
+    <ng-container *ngFor="let rating of ratings; index as i">
+      <div class="rating">
+            <span>
+                Rating {{tvShow.vote_average}} of {{rating.max}}
+            </span>
+      </div>
+    </ng-container>
+
+  </main>
+
   <button (click) =" navigateMe(tvShow)" class="button">
     <p>{{tvShow.name}}</p>
     <p class="first_air_date">{{tvShow.first_air_date}}</p>
