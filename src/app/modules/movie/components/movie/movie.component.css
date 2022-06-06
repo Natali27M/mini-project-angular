@@ -20,6 +20,10 @@ h4, p {
   color: red;
 }
 
+.rating {
+  background-color: white;
+}
+
 /*.stars {*/
 /*  width: 200px;*/
 /*}*/

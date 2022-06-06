@@ -11,6 +11,20 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="mat-typography">
+
+<div class="component">
+  <button onclick="switchTheme('light')">Light</button>
+  <button onclick="switchTheme('dark')">Dark</button>
+</div>
+
   <app-root></app-root>
+
+<script>
+  const html = document.querySelector('html');
+  html.dataset.theme = `theme-light`;
+  function switchTheme(theme) {
+    html.dataset.theme = `theme-${theme}`;
+  }
+</script>
 </body>
 </html>

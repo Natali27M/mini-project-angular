@@ -17,6 +17,7 @@ export class MoviesComponent implements OnInit {
   genres: IGenre[];
   p: number = 1;
   total: number = 0;
+  // theme: string;
 
   constructor(private httpClient: HttpClient, private movieService: MovieService) {
 
@@ -24,6 +25,7 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllMovies();
+    // this.getTheme();
   }
 
   getAllMovies() {
@@ -38,6 +40,10 @@ export class MoviesComponent implements OnInit {
     console.log(this.p,'page')
     this.getAllMovies();
   }
+
+  // getTheme() {
+  //   this.theme = localStorage.getItem("checked") as string;
+  // }
 
 }
 

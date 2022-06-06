@@ -23,3 +23,8 @@
 .first_air_date {
   color: red;
 }
+
+.rating {
+  background-color: white;
+  width: 300px;
+}
